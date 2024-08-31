@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <title>Calculator -</title>
+    <title>Scientific Calculator</title>
   </head>
   <body>
-    <div class="container">
-      <div class="calculator">
-        <input type="text" id="inputBox" placeholder="0" />
-        <div>
-          <button class="button operator">AC</button>
-          <button class="button operator">DEL</button>
-          <button class="button operator">%</button>
-          <button class="button operator">/</button>
+     <div class="container">
+        <div class="display">
+            <input id="screen" type="text" placeholder="0">
         </div>
-        <div>
-          <button class="button">7</button>
-          <button class="button">8</button>
-          <button class="button">9</button>
-          <button class="button operator">*</button>
-        </div>
-        <div>
-          <button class="button">4</button>
-          <button class="button">5</button>
-          <button class="button">6</button>
-          <button class="button operator">-</button>
-        </div>
-        <div>
-          <button class="button">1</button>
-          <button class="button">2</button>
-          <button class="button">3</button>
-          <button class="button operator">+</button>
-        </div>
+        <div class="btns">
+            <div class="row">
+                <button id="ac" class="operator" onclick="screen.value=''">AC</button>
+                <button class="operator" onclick="fact()">x!</button>
+                <button class="buttons" class="operator">(</button>
+                <button class="buttons" class="operator">)</button>
+                <button class="buttons" class="operator">%</button>
+                <button id="del" class="operator" onclick="backspc()">DEL</button>
+            </div>
 
-        <div>
-          <button class="button">00</button>
-          <button class="button">0</button>
-          <button class="button">.</button>
-          <button class="button equalBtn">=</button>
+            <div class="row">
+                <button class="operator" onclick="sin()">sin</button>
+                <button class="operator" onclick="pi()">π</button>
+                <button class="buttons">7</button>
+                <button class="buttons">8</button>
+                <button class="buttons">9</button>
+                <button class="buttons" class="operator">÷</button>
+            </div>
+
+            <div class="row">
+                <button class="operator" onclick="cos()">cos</button>
+                <button class="operator" onclick="log()">log</button>
+                <button class="buttons">4</button>
+                <button class="buttons">5</button>
+                <button class="buttons">6</button>
+                <button class="buttons" class="operator">x</button>
+            </div>
+
+            <div class="row">
+                <button class="operator" onclick="tan()">tan</button>
+                <button class="operator" onclick="sqrt()">√</button>
+                <button class="buttons">1</button>
+                <button class="buttons">2</button>
+                <button class="buttons">3</button>
+                <button class="buttons" class="operator">-</button>
+            </div>
+
+            <div class="row">
+                <button class="operator" onclick="e()">e</button>
+                <button class="operator" onclick="pow()">x <span style="position: relative; bottom: .4em; right: .1em;">y</span> </button>
+                <button class="buttons">0</button>
+                <button class="buttons" class="operator">.</button>
+                <button id="eval" onclick="screen.value=eval(screen.value)" class="equalBtn">=</button>
+                <button class="buttons" class="operator">+</button>
+            </div>
         </div>
-      </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>

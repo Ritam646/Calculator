@@ -1,27 +1,68 @@
-let input = document.getElementById('inputBox');
-let buttons = document.querySelectorAll('button');
+var screen=document.querySelector('#screen');
+    var buttons=document.querySelectorAll('.buttons');
+    for(item of buttons)
+    {
+        item.addEventListener('click',(e)=>{
+            buttonstext=e.target.innerText;
 
-let string = "";
-let arr = Array.from(buttons);
-arr.forEach(button => {
-    button.addEventListener('click', (e) =>{
-        if(e.target.innerHTML == '='){
-            string = eval(string);
-            input.value = string;
-        }
+            if(buttonstext =='x')
+            {
+                buttonstext= '*';
+            }
 
-        else if(e.target.innerHTML == 'AC'){
-            string = "";
-            input.value = string;
+            if(buttonstext=='÷')
+            {
+                buttonstext='/';
+            }
+            screen.value+=buttonstext;
+        });
+    }
+    function sin()
+    {
+        screen.value=Math.sin(screen.value);
+    }
+    function cos()
+    {
+        screen.value=Math.cos(screen.value);
+    }
+    function tan()
+    {
+        screen.value=Math.tan(screen.value);
+    }
+    function pow()
+    {
+        screen.value=Math.pow(screen.value,2);
+    }
+    function sqrt()
+    {
+        screen.value=Math.sqrt(screen.value,2);
+    }
+    function log()
+    {
+        screen.value=Math.log(screen.value);
+    }
+    function pi()
+    {
+        screen.value= 3.14159265359;
+    }
+
+    function e()
+    {
+        screen.value=2.71828182846;
+    }
+    function fact()
+    {
+        var i, num, f;
+        f=1
+        num=screen.value;
+        for(i=1; i<=num; i++)
+        {
+            f=f*i;
         }
-        else if(e.target.innerHTML == 'DEL'){
-            string = string.substring(0, string.length-1);
-            input.value = string;
-        }
-        else{
-            string += e.target.innerHTML;
-            input.value = string;
-        }
-        
-    })
-})
+        i=i-1;
+        screen.value=f;
+    }
+    function backspc()
+    {
+        screen.value=screen.value.substr(0,screen.value.length-1);
+    }
